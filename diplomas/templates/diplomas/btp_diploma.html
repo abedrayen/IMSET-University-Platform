@@ -1,0 +1,83 @@
+{% load custom_filters %}
+<!DOCTYPE html>
+<html lang="ar-TN">
+<head>
+    <title>Diploma</title>
+    <style>
+        @page {
+            size: A4 landscape;
+            margin: 0mm;
+        }
+        html {
+            width: 297mm;   /* width of A4 landscape in mm */
+            height: 210mm;  /* height of A4 landscape in mm */
+        }
+        body {
+            width: 265.6mm;   /* width of A4 landscape in mm */
+            height: 179.5mm;  /* height of A4 landscape in mm */
+            margin: 0mm;
+            padding: 16mm 16mm 14.7mm 15.4mm;
+            background-image: url("https://raw.githubusercontent.com/marzoukbrahem/gallery/main/imsetdiplome.jpg");
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Calibri', sans-serif;
+            text-align: right;
+            direction: rtl;
+        }
+        ul {
+            padding: 0px;
+        }
+        ul li:before {
+            content: "- ";
+            padding-right: 0px;
+        }
+        p {
+            margin: 2mm;
+        }
+        .content {
+            margin: 0 5mm;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between; height: 30mm; font-size: 11px">
+        <div style="margin: 4mm 10mm;">
+            <h3 style="text-align: center; margin: auto;">
+                الجمهورية التونسية<br>
+                وزارة التشغيل والتكوين المهني<br>
+                الإدارة الجهوية للتشغيل والتكوين المهني بسوسة
+            </h3>
+        </div>
+        <div style="margin: 4mm 10mm;">
+            <h3 style="text-align: center; margin: auto;">
+                المعهد المغاربي للعلوم الاقتصادية والتكنولوجيا<br/>
+                هيكل خاص للتكوين<br/>
+                رقم التسجيل 15-391-51
+            </h3>
+        </div>
+    </div>
+    <h1 style="text-align: center; margin: 3mm auto 0 auto; font-size: 48px;">{{student.get_formation_display}}</h1>
+    <div class="content">
+        <h2 style="font-size: 11px; margin: -2mm 0 0 0">بعد الإطلاع :</h2>
+        <ul  style="list-style-type: none;">
+            <li style="font-size: 10px;">القانون عدد 10 لسنة 2008 المؤرخ في 11 فيفري 2008 والمتعلق بالتكوين المهني</li>
+            <li style="font-size: 10px;">الأمر عدد 1397 لسنة 1994 المؤرخ في 20 جوان 1994 والمتعلق بضبط السلم الوظائف الوطني وكذلك شروط تنظير شهادات ومؤهلات التكوين المهني الأساسي والمستمر.</li>
+            <li style="font-size: 10px;">الأمر عدد 2139 لسنة 2000 المؤرخ في 08 جويلية 2000 والمتعلق بضبط السلم الوطني للمهارات</li>
+            <li style="font-size: 10px;">قرار وزير التكوين المهني والتشغيل مؤرخ في 02 اوت 2010 والمتعلق بضبط الإطار المرجعي العام لشهادات التكوين المهني.</li>
+            <li style="font-size: 10px;">كراس الشروط المتعلقة بضبط قواعد أحداث وسير هياكل التكوين الخاصة المصادق عليه بمقتضى القرار المشترك المؤرخ في 12 سبتمبر 2001 كما تم إتمامه بالقرار المشترك المؤرخ في 31 مارس 2004.</li>
+            <li style="font-size: 10px;">محضر جلسة التصريح النهائي بنتائج ختم التكوين المؤرخ في 29 سبتمبر 2023</li>
+        </ul>
+        <h2 style="font-size: 20px;">تسند :</h2>
+        <p style="font-size: 16px;">إلى السيد <b style="font-size: 20px;">{{ student.first_name }} {{ student.last_name }}</b> المولود (ة) في <b style="font-size: 18px;">{{ student.date_of_birth|format_arabic_date }}</b> ب<b style="font-size: 18px;">{{student.location_of_birth}}</b> صاحب بطاقة تعريف عدد <b style="font-size: 18px;">{{student.cin_number}}</b></p>
+        
+        <div style="display: flex;">
+            <p style="width: 100%;">شهادة : <b style="font-size: 20px;">{{ diploma.get_diploma_type_display }}</b></p>
+            <p style="width: 100%;"> في إختصاص : <b style="font-size: 20px;">{{student.specialty}}</b></p> 
+            <p style="width: 100%;"> ملاحظة : <b style="font-size: 20px;">{{student.get_diploma_obtained_display}}</b></p> 
+            <p style="width: 100%;">تاريخ الإيداع النهائي :</p>
+        </div>
+        <p style="text-align: right;">تونس في : <b>{{ diploma.issuance_date|format_arabic_date }}</b></p>
+    </div>
+</body>
+</html>

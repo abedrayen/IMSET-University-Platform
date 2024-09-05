@@ -1,0 +1,5 @@
+Django>=4.2,<5.0
+djangorestframework>=3.14.0
+weasyprint>=56.0
+pillow>=9.4.0
+Babel
