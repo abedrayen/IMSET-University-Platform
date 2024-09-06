@@ -69,11 +69,11 @@
             <li style="font-size: 10px;">محضر جلسة التصريح النهائي بنتائج ختم التكوين المؤرخ في 29 سبتمبر 2023</li>
         </ul>
         <h2 style="font-size: 20px;">تسند :</h2>
-        <p style="font-size: 16px;">إلى السيد <b style="font-size: 20px;">{{student.name}}</b> المولود (ة) في <b style="font-size: 18px;">{{ student.date_of_birth|format_arabic_date }}</b> ب<b style="font-size: 18px;">{{student.location_of_birth}}</b> صاحب بطاقة تعريف عدد <b style="font-size: 18px;">{{student.cin}}</b></p>
+        <p style="font-size: 16px;">إلى السيد <b style="font-size: 20px;">{{ student.first_name }} {{ student.last_name }}</b> المولود (ة) في <b style="font-size: 18px;">{{ student.date_of_birth|format_arabic_date }}</b> ب<b style="font-size: 18px;">{{student.location_of_birth}}</b> صاحب بطاقة تعريف عدد <b style="font-size: 18px;">{{student.cin_number}}</b></p>
         
         <div style="display: flex;">
             <p style="width: 100%;">شهادة : <b style="font-size: 20px;">{{student.get_formation_display}}</b></p>
-            <p style="width: 100%;"> في إختصاص : <b style="font-size: 20px;">{{student.get_speciality_display}}</b></p> 
+            <p style="width: 100%;"> في إختصاص : <b style="font-size: 20px;">{{student.specialty}}</b></p> 
             <p style="width: 100%;"> ملاحظة : <b style="font-size: 20px;">{{student.get_diploma_obtained_display}}</b></p> 
             <p style="width: 100%;">تاريخ الإيداع النهائي :</p>
         </div>
