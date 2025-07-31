@@ -175,13 +175,7 @@ Key packages used:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📞 Support
 
-For support and questions, please contact the IMSET IT department or create an issue in this repository.
-
-## 🏛️ About IMSET
-
-Institut Méditerranéen des Sciences, de l'Économie et des Technologies (IMSET) is a leading educational institution focused on providing quality education in technology and business fields.
 
 ---
 
